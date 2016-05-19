@@ -68,7 +68,8 @@ angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers'])
       url: '/calender',
       views: {
         'menuContent': {
-          templateUrl: 'templates/calender.html'
+          templateUrl: 'templates/calender.html',
+          controller: 'CalendarCtrl'
         }
       }
     })
