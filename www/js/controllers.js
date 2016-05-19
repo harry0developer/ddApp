@@ -53,4 +53,13 @@ angular.module('dignitydreams.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+
+
+})
+
+
+
+.controller('CalenderCtrl', function($scope, $stateParams) {
+
+
 });
