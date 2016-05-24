@@ -1,58 +1,46 @@
-angular.module('dignitydreams.controllers', ['ionic', 'ngAnimate', 'ui.rCalendar'])
+angular.module('calendarDemoApp', ['ionic', 'ngAnimate', 'ui.rCalendar'])
+    .run(function ($ionicPlatform, $animate) {
+        'use strict';
+        $animate.enabled(false);
+    })
+    .config(function ($stateProvider, $urlRouterProvider) {
+        'use strict';
+        $stateProvider
+            .state('tabs', {
+                url: '/tab',
+                abstract: true,
+                templateUrl: 'templates/tabs.html'
+            })
+            .state('tabs.home', {
+                url: '/home',
+                views: {
+                    'home-tab': {
+                        templateUrl: 'templates/home.html',
+                        controller: 'CalendarDemoCtrl'
+                    }
+                }
+            })
+            .state('tabs.about', {
+                url: '/about',
+                views: {
+                    'about-tab': {
+                        templateUrl: 'templates/about.html'
+                    }
+                }
+            })
+            .state('tabs.contact', {
+                url: '/contact',
+                views: {
+                    'contact-tab': {
+                        templateUrl: 'templates/contact.html'
+                    }
+                }
+            });
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
-
-.controller('NewsfeedCtrl', function($scope,$http,$state) {
-  $scope.header = "Rammusi";
-
-  $http.get('js/facebookFeeds.json').success(function(data){
-      $scope.feeds = data.feeds;
-      $scope.feedID = $state.params.feedID;
+        $urlRouterProvider.otherwise('/tab/home');
     })
 
-})
-
-
-  .controller('CalendarCtrl', function ($scope) {
+    .controller('CalendarDemoCtrl', function ($scope) {
         'use strict';
         $scope.calendar = {};
         $scope.changeMode = function (mode) {

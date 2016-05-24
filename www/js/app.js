@@ -4,9 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers'])
+angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers','ngAnimate'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$animate) {
+
+    // calender configs
+   'use strict';
+    $animate.enabled(false);  
+ 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -64,11 +69,11 @@ angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers'])
       }
     })
 
-    .state('app.calender', {
+    .state('app.calendar', {
       url: '/calender',
       views: {
         'menuContent': {
-          templateUrl: 'templates/calender.html',
+          templateUrl: 'templates/home.html',
           controller: 'CalendarCtrl'
         }
       }
