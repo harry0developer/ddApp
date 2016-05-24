@@ -1,0 +1,15 @@
+<ion-view view-title="News feed">
+
+  <ion-content>
+    <div class="card" ng-repeat="feed in feeds" >
+	    <a class="item item-avatar" href="#/app/newsfeeds/{{feed.id}}">
+	      <img src="img/{{feed.img}}">
+	      <h2>{{feed.title}}</h2>
+	      <p>{{feed.content}}</p>
+	    </a>
+
+	</div>
+
+  </ion-content>
+
+</ion-view>

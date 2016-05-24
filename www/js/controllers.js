@@ -41,15 +41,14 @@ angular.module('dignitydreams.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { img:"vodacom.jpg" ,title: 'Vodacom', content:'Vodacom graduates develop an app for dignity dreams', id: 1 },
-    { img: "pnp.png",title: 'PnP', content:'PnP donates food for children', id: 2 },
-    { img: "first.jpg",title: '!st for Women', content:'!st for Women contributed large amount of Sanitary pads, food and underwears', id: 3 },
-    { img: "ionic.png",title: 'High School',content:'High school tenagers learn about pregnancy', id: 4 },
-    { img: "facebook.png",title: 'Facebook',content:'Dignity dreams reaches 10000 followers on facebook', id: 5 },
-    { img: "facebook.png",title: 'Sanitary pads' ,content:'Pads in demand at seondary schools', id: 6 }
-  ];
+.controller('NewsfeedCtrl', function($scope,$http,$state) {
+  $scope.header = "Rammusi";
+
+  $http.get('js/facebookFeeds.json').success(function(data){
+      $scope.feeds = data.feeds;
+      $scope.feedID = $state.params.feedID;
+    })
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
