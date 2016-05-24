@@ -101,19 +101,28 @@ angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers'])
       }
     })
 
-
-
-
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.newsfeeds', {
+      url: '/newsfeeds',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/newsfeeds.html',
+          controller: 'NewsfeedCtrl'
         }
       }
     })
 
+
+    .state('app.newsfeed', {
+      url: '/newsfeeds/:feedID',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/newsfeed.html',
+          controller: 'NewsfeedCtrl'
+        }
+      }
+    })
+
+    
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -122,7 +131,9 @@ angular.module('dignitydreams', ['ionic', 'dignitydreams.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
+
+
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/newsfeeds');
 });

@@ -1,0 +1,9 @@
+{
+    { img:"vodacom.jpg" ,title: 'Vodacom', content:'Vodacom graduates develop an app for dignity dreams', id: 1 },
+    { img: "pnp.png",title: 'PnP', content:'PnP donates food for children', id: 2 },
+    { img: "first.jpg",title: '!st for Women', content:'!st for Women contributed large amount of Sanitary pads, food and underwears', id: 3 },
+    { img: "ionic.png",title: 'High School',content:'High school tenagers learn about pregnancy', id: 4 },
+    { img: "facebook.png",title: 'Facebook',content:'Dignity dreams reaches 10000 followers on facebook', id: 5 },
+    { img: "facebook.png",title: 'Sanitary pads' ,content:'Pads in demand at seondary schools', id: 6 }
+    
+ }

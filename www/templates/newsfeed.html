@@ -1,0 +1,27 @@
+<ion-view view-title="Newsfeed">
+  <ion-content>
+    <div class="card padding" ng-repeat="feed in feeds | filter:{id : feedID}" >
+	    
+
+
+	  <div class="item item-avatar">
+	    <img src="img/{{feed.img}}">
+	    <h2>{{feed.title}}</h2>
+	  </div>
+
+	  <div class="item item-body">
+	    <img class="full-image" src="img/{{feed.img}}">
+	    <p>
+	    	{{feed.content}}
+	    </p>
+	    <p>
+	      <a href="#" class="subdued">1 Like</a>
+	      <a href="#" class="subdued">5 Comments</a>
+	    </p>
+	  </div>
+
+	</div>
+
+
+  </ion-content>
+</ion-view>
