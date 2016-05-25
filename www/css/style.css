@@ -14,7 +14,7 @@ img.logo {
 p.say{
 	font-size: 11px;
 	text-align: center;
-	color:#C864FA;
+	color:#C864FA !important;
 	padding: 10px;
 }
 
@@ -24,21 +24,21 @@ li{
 }
 
 .menu{
-	background-color: #CC66F0;
+	background-color: #CC66F0  !important;
 
 }
 .bar.bar-positive, .button.button-positive
 {
-	background-color: #8226A4;
+	background-color: #8226A4 !important;
 	border-color: #fff
 }
 .button.button-positive.button-outline {
-    border-color: #CC66F0;
+    border-color: #CC66F0 !important;
     background: transparent none repeat scroll 0% 0%;
-    color: #CC66F0;
+    color: #CC66F0 !important;
 }
 .item-complex .item-content, .item-radio .item-content{
-	background-color: #CC66F0;
+	background-color: #CC66F0 !important;
     color: #F8F8F8 !important;
 }
 
